@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3002
 
 # Comando para iniciar el backend
-CMD ["node", "server.js"]
+CMD ["node", "index.js"]
