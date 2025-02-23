@@ -59,11 +59,12 @@ jobs:
             sudo docker rm gemeni_pinecone || true
 
             # Verificar las variables de entorno antes de generar el archivo
-            echo "Base de datos: $GOOGLE_API_KEY"
+            echo "Base de datos: $SMTP_USER"
 
             # Crear el archivo .env directamente en el directorio actual
-            echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}" >> .env
-            echo "PINECONE_API_KEY=${{ secrets.PINECONE_API_KEY }}" >> .env
+            echo "SMTP_USER=${{ secrets.SMTP_USER }}" >> .env
+            echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> .env
+            echo "SENDER_EMAIL=${{ secrets.SENDER_EMAIL }}" >> .env
 
             # Verificar que el archivo .env se ha creado correctamente
             cat .env
